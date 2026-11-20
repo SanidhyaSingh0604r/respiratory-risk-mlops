@@ -107,6 +107,28 @@ docker run -p 8000:8000 respiratory-risk
    Screenshot a green run for your report.
 6. When a model is promoted, the image appears under your repo's **Packages** (`ghcr.io/<you>/<repo>`).
 
+## Model monitoring & retraining workflow (MLOps Practical Assessment)
+
+`src/monitor.py` extends the project with a validate -> evaluate -> retrain -> quality-gate loop for a new labelled data batch.
+Full explanation and the execution evidence are in **[`docs/MONITORING_WORKFLOW.md`](docs/MONITORING_WORKFLOW.md)**.
+
+```bash
+python -m src.monitor make-batch   # demo: newest 60 days of daily.csv become data/incoming/new_batch.csv
+python -m src.monitor              # Task A-D: validate, evaluate champion, train candidate, quality gate
+python -m src.monitor promote      # optional, explicit, logged promotion (only if the candidate is eligible)
+pytest tests/test_monitor.py -q
+```
+
+| Task | What happens | Output |
+|---|---|---|
+| A Prepare data | required columns, missing values, duplicate dates (the record ID), size, target distribution | `reports/data_validation.json` |
+| B Evaluate champion | Accuracy, Precision, Recall, F1 (macro + per class + confusion matrix) | `reports/evaluation_report.json/.md` |
+| C Retrain | existing history + new batch -> same `build_dataset` pipeline -> candidate; MLflow run if installed | `models/candidate/` |
+| D Quality gate | candidate eligible only if macro-F1 beats the champion **and** High-class recall does not drop > 0.05, judged on the same unseen window | `reports/quality_gate.json`, `reports/decision_log.jsonl` |
+
+The champion in `models/champion/` is never overwritten by the default run; `promote` archives the old champion
+to `models/archive/` and records the action.
+
 ## Design decisions & honest limitations
 
 - **Why a gate?** A daily retrain can produce a worse model by chance. The champion/challenger gate

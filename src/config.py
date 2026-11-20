@@ -30,3 +30,10 @@ HOLDOUT_DAYS = int(os.getenv("HOLDOUT_DAYS", "60"))      # most recent days used
 MIN_ROWS = int(os.getenv("MIN_ROWS", "100"))             # refuse to train on less data
 MIN_IMPROVEMENT = float(os.getenv("MIN_IMPROVEMENT", "0.0"))  # challenger must beat champion by this much (macro-F1)
 RANDOM_STATE = 42
+
+# --- Monitoring / retraining workflow (src/monitor.py) ---
+BATCH_PATH = Path(os.getenv("BATCH_PATH", ROOT / "data" / "incoming" / "new_batch.csv"))
+CANDIDATE_DIR = Path(os.getenv("CANDIDATE_DIR", ROOT / "models" / "candidate"))
+BATCH_DAYS = int(os.getenv("BATCH_DAYS", "60"))          # size of the demo batch carved by `make-batch`
+GATE_DAYS = int(os.getenv("GATE_DAYS", "30"))            # newest batch days kept OUT of retraining, used to judge champion vs candidate
+MAX_HIGH_RECALL_DROP = float(os.getenv("MAX_HIGH_RECALL_DROP", "0.05"))  # safety guard on the "High" class

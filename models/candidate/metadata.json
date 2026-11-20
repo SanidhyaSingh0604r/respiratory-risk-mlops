@@ -1,0 +1,43 @@
+{
+  "run_at": "2026-11-20T05:33:51+00:00",
+  "selected_model": "hist_gradient_boosting",
+  "cv_f1_macro": {
+    "random_forest": 0.5340158383591811,
+    "hist_gradient_boosting": 0.5482239028123378
+  },
+  "n_rows": 332,
+  "n_train": 302,
+  "n_holdout": 30,
+  "train_end": "2026-10-19",
+  "holdout_end": "2026-11-18",
+  "features": [
+    "pm2_5_mean",
+    "pm10_mean",
+    "o3_max",
+    "no2_mean",
+    "temp_mean",
+    "temp_min",
+    "temp_max",
+    "humidity_mean",
+    "wind_mean",
+    "precip_sum",
+    "score_today",
+    "pm2_5_lag1",
+    "pm2_5_roll3",
+    "pm2_5_roll7",
+    "month_sin",
+    "month_cos"
+  ],
+  "classes": [
+    "Low",
+    "Moderate",
+    "High"
+  ],
+  "city": "Gurugram",
+  "status": "candidate (not promoted)",
+  "gate_decision": "RETAIN_CHAMPION",
+  "challenger": {
+    "f1_macro": 0.6590909090909092,
+    "accuracy": 0.7333333333333333
+  }
+}

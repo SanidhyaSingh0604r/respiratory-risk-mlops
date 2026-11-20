@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-11-20T05:33:49+00:00",
+  "required_columns_present": true,
+  "n_rows_in_file": 60,
+  "n_rows_after_cleaning": 60,
+  "n_labelled_rows_usable": 59,
+  "date_range": [
+    "2026-09-21",
+    "2026-11-19"
+  ],
+  "missing_values_per_column": {},
+  "duplicate_ids_in_batch": 0,
+  "overlap_with_existing_history": 0,
+  "target_distribution": {
+    "Low": {
+      "count": 0,
+      "share": 0.0
+    },
+    "Moderate": {
+      "count": 24,
+      "share": 0.407
+    },
+    "High": {
+      "count": 35,
+      "share": 0.593
+    }
+  },
+  "warnings": [
+    "class(es) absent from batch: ['Low']; macro metrics average over classes that occur"
+  ],
+  "status": "passed_with_warnings"
+}

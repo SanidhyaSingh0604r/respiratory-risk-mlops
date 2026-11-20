@@ -1,0 +1,1 @@
+{"at": "2026-11-20T05:33:52+00:00", "decision": "RETAIN_CHAMPION", "action": "none (champion untouched)", "champion_f1": 0.7127222982216143, "candidate_f1": 0.6590909090909092, "reasons": ["criterion 1 (macro-F1 0.659 vs champion 0.713, required margin > 0.0): FAIL", "criterion 2 (High-class recall 0.818 vs champion 0.818, max allowed drop 0.05): PASS"]}

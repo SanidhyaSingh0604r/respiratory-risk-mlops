@@ -1,0 +1,111 @@
+{
+  "decision": "RETAIN_CHAMPION",
+  "eligible_for_promotion": false,
+  "primary_metric": "f1_macro",
+  "metric_justification": "Macro-F1 is the primary metric because the risk classes are imbalanced (see target_distribution) and accuracy would let a model ignore the rare 'High' class; macro-F1 weights Low/Moderate/High equally and combines precision and recall. It is also the metric the production daily-retrain gate (src/train.py) already uses, so decisions are consistent. A secondary guard on High-class recall prevents promoting a model that misses more high-risk days, the costliest error for this application.",
+  "criteria_passed": {
+    "macro_f1_improvement": false,
+    "high_recall_guard": true
+  },
+  "reasons": [
+    "criterion 1 (macro-F1 0.659 vs champion 0.713, required margin > 0.0): FAIL",
+    "criterion 2 (High-class recall 0.818 vs champion 0.818, max allowed drop 0.05): PASS"
+  ],
+  "champion_metrics": {
+    "n": 30,
+    "accuracy": 0.7666666666666667,
+    "precision_macro": 0.7063492063492063,
+    "recall_macro": 0.7215909090909092,
+    "f1_macro": 0.7127222982216143,
+    "per_class": {
+      "Low": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "Moderate": {
+        "precision": 0.5555555555555556,
+        "recall": 0.625,
+        "f1": 0.5882352941176471,
+        "support": 8
+      },
+      "High": {
+        "precision": 0.8571428571428571,
+        "recall": 0.8181818181818182,
+        "f1": 0.8372093023255814,
+        "support": 22
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        5,
+        3
+      ],
+      [
+        0,
+        4,
+        18
+      ]
+    ]
+  },
+  "candidate_metrics": {
+    "n": 30,
+    "accuracy": 0.7333333333333333,
+    "precision_macro": 0.6590909090909092,
+    "recall_macro": 0.6590909090909092,
+    "f1_macro": 0.6590909090909092,
+    "per_class": {
+      "Low": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "Moderate": {
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "support": 8
+      },
+      "High": {
+        "precision": 0.8181818181818182,
+        "recall": 0.8181818181818182,
+        "f1": 0.8181818181818182,
+        "support": 22
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        4,
+        4
+      ],
+      [
+        0,
+        4,
+        18
+      ]
+    ]
+  },
+  "decided_at": "2026-11-20T05:33:52+00:00",
+  "gate_window": [
+    "2026-10-20",
+    "2026-11-18"
+  ],
+  "n_gate_rows": 30,
+  "candidate_dir": "/tmp/claude-0/-home-claude/d2f1624d-1f3f-5365-8c56-bbd28725000a/scratchpad/proj/respiratory-risk-mlops-main/models/candidate",
+  "champion_overwritten": false,
+  "mlflow": "skipped (mlflow not installed)"
+}

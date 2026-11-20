@@ -1,0 +1,9 @@
+[A] batch validated: passed_with_warnings; 60 rows 2026-09-21..2026-11-19; target distribution Low=0 (0%), Moderate=24 (41%), High=35 (59%)
+    warning: class(es) absent from batch: ['Low']; macro metrics average over classes that occur
+[B] champion on new batch (n=59): acc=0.763 P=0.759 R=0.767 F1=0.759
+[C] candidate 'hist_gradient_boosting' trained on 302 rows (through 2026-10-19) -> models/candidate/model.joblib
+[monitor] mlflow not installed; skipping experiment tracking
+[D] RETAIN_CHAMPION
+    criterion 1 (macro-F1 0.659 vs champion 0.713, required margin > 0.0): FAIL
+    criterion 2 (High-class recall 0.818 vs champion 0.818, max allowed drop 0.05): PASS
+    champion NOT modified.
