@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-24T11:35:24+00:00",
+  "checked_at": "2026-11-25T10:21:02+00:00",
   "window_days": 45,
   "seasonal_reference": false,
   "reference_rows": 273,
@@ -12,8 +12,8 @@
       "drifted": false
     },
     "pm10_mean": {
-      "ks_pvalue": 0.0001,
-      "psi": 3.216,
+      "ks_pvalue": 0.0,
+      "psi": 3.169,
       "drifted": true
     },
     "o3_max": {
@@ -23,22 +23,22 @@
     },
     "no2_mean": {
       "ks_pvalue": 0.0,
-      "psi": 2.256,
+      "psi": 2.79,
       "drifted": true
     },
     "temp_mean": {
       "ks_pvalue": 0.0,
-      "psi": 5.976,
+      "psi": 6.031,
       "drifted": true
     },
     "temp_min": {
       "ks_pvalue": 0.0,
-      "psi": 5.366,
+      "psi": 5.961,
       "drifted": true
     },
     "temp_max": {
       "ks_pvalue": 0.0,
-      "psi": 3.347,
+      "psi": 3.932,
       "drifted": true
     },
     "humidity_mean": {
@@ -48,11 +48,11 @@
     },
     "wind_mean": {
       "ks_pvalue": 0.0,
-      "psi": 1.347,
+      "psi": 1.385,
       "drifted": true
     },
     "precip_sum": {
-      "ks_pvalue": 0.2267,
+      "ks_pvalue": 0.125,
       "psi": 0.134,
       "drifted": false
     },
@@ -63,17 +63,17 @@
     },
     "pm2_5_lag1": {
       "ks_pvalue": 0.1805,
-      "psi": 1.608,
+      "psi": 1.61,
       "drifted": false
     },
     "pm2_5_roll3": {
-      "ks_pvalue": 0.3314,
-      "psi": 1.663,
+      "ks_pvalue": 0.3833,
+      "psi": 1.643,
       "drifted": false
     },
     "pm2_5_roll7": {
       "ks_pvalue": 0.0064,
-      "psi": 2.775,
+      "psi": 2.702,
       "drifted": true
     }
   }
