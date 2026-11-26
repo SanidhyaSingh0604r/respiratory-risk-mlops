@@ -1,23 +1,23 @@
 {
-  "run_at": "2026-11-25T10:21:05+00:00",
-  "n_rows": 337,
-  "n_train": 277,
+  "run_at": "2026-11-26T09:59:12+00:00",
+  "n_rows": 338,
+  "n_train": 278,
   "n_holdout": 60,
-  "train_end": "2026-09-24",
-  "holdout_end": "2026-11-23",
+  "train_end": "2026-09-25",
+  "holdout_end": "2026-11-24",
   "cv_f1_macro": {
-    "random_forest": 0.550079310002974,
-    "hist_gradient_boosting": 0.4445562844668871
+    "random_forest": 0.4791017503435804,
+    "hist_gradient_boosting": 0.454655340289091
   },
   "selected_model": "random_forest",
   "challenger": {
-    "f1_macro": 0.717978848413631,
-    "accuracy": 0.7333333333333333
+    "f1_macro": 0.6977777777777778,
+    "accuracy": 0.7166666666666667
   },
   "champion": {
-    "f1_macro": 0.7569444444444444,
-    "accuracy": 0.7666666666666667
+    "f1_macro": 0.7376858058874963,
+    "accuracy": 0.75
   },
-  "persistence_baseline_f1": 0.7435897435897436,
+  "persistence_baseline_f1": 0.7221364618709478,
   "promoted": false
 }
